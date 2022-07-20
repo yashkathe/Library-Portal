@@ -1,19 +1,39 @@
-const express = require("express")
-const bodyParser = require("body-parser")
-const path = require("path")
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const mongoose = require("mongoose");
 
-const app = express()
+URI = "mongodb+srv://Yash:Yash2202@cluster0.kinn93w.mongodb.net/LibraryDB?w=majority";
 
-app.set('view-engine', 'ejs')
-app.set('views', 'views')
+const app = express();
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.set('view-engine', 'ejs');
+app.set('views', 'views');
+
 
 //static folders
 app.use(express.static(path.join(__dirname, './public/css')));
 app.use(express.static(path.join(__dirname, './public/javascript')));
 
-const home = require('./routes/home')
-app.use( home)
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(3000)
+const home = require('./routes/home');
+const clientRoutes = require('./routes/client')
+
+app.use(home);
+app.use("/client",clientRoutes)
+
+
+app.use((req, res, next) => {
+    res.status(404).render('error404.ejs', { pageTitle: "Error 404" });
+});
+
+
+mongoose.connect(URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(result => {
+    app.listen(3005);
+}).catch(err => {
+    console.log(err);
+});
