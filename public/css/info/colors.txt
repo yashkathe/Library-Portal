@@ -1,0 +1,2 @@
+blue: rgba(13, 151, 172, 0.9)
+background dark gray: rgb(39, 39, 39

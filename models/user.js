@@ -1,6 +1,10 @@
-const monngoose = require("mongoose")
+const mongoose = require("mongoose")
 
-const userSchema = new monngoose.Schema({
+const userSchema = new mongoose.Schema({
+    email:{
+        type:"String",
+        requied:true
+    },
     pid:{
         type:"String",
         required:true
@@ -10,3 +14,5 @@ const userSchema = new monngoose.Schema({
         required:true
     }
 })
+
+module.exports = mongoose.model('User', userSchema)

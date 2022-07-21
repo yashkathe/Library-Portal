@@ -14,6 +14,7 @@ app.set('views', 'views');
 //static folders
 app.use(express.static(path.join(__dirname, './public/css')));
 app.use(express.static(path.join(__dirname, './public/javascript')));
+app.use(express.static(path.join(__dirname, './public/assets')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

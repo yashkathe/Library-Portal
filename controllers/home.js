@@ -1,3 +1,3 @@
 exports.getHomePage = (req, res, next) => {
-    res.render('home.ejs', { number: 1 });
+    res.render('home.ejs', { pageTitle: "Home Page" });
 };

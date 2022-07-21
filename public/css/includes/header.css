@@ -1,11 +1,3 @@
-body {
-	background-color: rgb(39, 39, 39);
-	padding: 0;
-	margin: 0;
-}
-
-/* header */
-
 .main-header {
     margin-top: 5vh;
     height: auto;
@@ -63,12 +55,10 @@ body {
 }
 
 .header__div1 > h1 {
-	font-size: 2.7rem;
+	font-size: 2.5rem;
 	margin: 0;
 	box-sizing: border-box;
 	padding-right: 1%;
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
 }
 
 @media (max-width: 78rem) {
@@ -118,9 +108,6 @@ body {
 	padding-left: 80%;
 }
 
-/* section  */
-
-/* remove default styling for a tag */
 a {
 	color: black;
 	text-decoration: none;
@@ -130,32 +117,4 @@ a:hover {
 	color: rgb(36, 35, 35);
 	text-decoration: none;
 	cursor: pointer;
-}
-
-.a__user:hover,
-.a__user:active {
-	border: 0.8px solid rgb(58, 58, 58);
-	background-color: rgb(32, 172, 194);
-	color: rgb(46, 45, 45);
-    transition: 0.5s ;
-}
-
-.user__links{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20vh;
-}
-
-.a__user{
-    border: 0.5px solid rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-	padding: 1rem;
-    margin: 2rem;
-	font-size: 1.5rem;
-	background-color: rgb(13, 118, 134);
-	text-decoration: none;
-	color: rgba(0, 0, 0, 0.8);
-	border-radius: 1rem 0rem 1rem 0;
 }

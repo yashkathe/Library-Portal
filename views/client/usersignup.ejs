@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="login.css">
-    <title>Document</title>
-    
-</head>
-<body>
-    <header class="main-header">
-        <h1>
-            SFIT
-        </h1>
-        <h2 class="name">
-            Virtual Library
-        </h2>
-    </header>
-    <section>
-        <h2>User</h2>
-        <div>
-            <label for="uname"><b>mail</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-        </div>
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="home.css"/a>
+		<link rel="stylesheet" href="/login.css" />
+		<link rel="stylesheet" href="/includes/header.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<%- include("../includes/header.ejs") %>
 
-		<label for="psw"><b>Confirm Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-		
-		<button type="submit">Register</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-    </section>
-</body>
+		<section class="signup__section">
+			<form action="/client/signup" method="post">
+				<div class="form__div">
+					<label for="email-Id"><b>Email-Id</b></label>
+					<input
+						type="text"
+						name="email"
+						required
+					/>
+				</div>
+				<div class="form__div">
+					<label for="uname"><b>PID</b></label>
+					<input
+						type="number"
+						name="pid"
+                        min="100000"
+                        max="999999"
+						required
+					/>
+				</div>
+				<div class="form__div">
+					<label for="password"><b>Password</b></label>
+					<input
+						type="password"
+						name="password"
+						required
+                        minlength="8"
+                        maxlength="15"
+					/>
+				</div>
+				<div class="form__div">
+					<label for="password"><b>Confirm Password</b></label>
+					<input
+						type="password"
+						name="Cpassword"
+						required
+                        minlength="8"
+                        maxlength="15"
+					/>
+				</div>
+				<div class="form__div">
+					<button type="submit" class="submit__btn">Create Account</button>
+				</div>
+			</form>
+		</section>
+	</body>
 </html>
