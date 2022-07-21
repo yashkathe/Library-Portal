@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="home.css"/a>
 		<link rel="stylesheet" href="/login.css" />
 		<link rel="stylesheet" href="/includes/header.css" />
-		<title>Document</title>
+		<title><%= pageTitle %></title>
 	</head>
 	<body>
 		<%- include("../includes/header.ejs") %>
@@ -16,21 +16,11 @@
 			<form action="/client/signup" method="post">
 				<div class="form__div">
 					<label for="email-Id"><b>Email-Id</b></label>
-					<input
-						type="text"
-						name="email"
-						required
-					/>
+					<input type="text" name="email" required />
 				</div>
 				<div class="form__div">
 					<label for="uname"><b>PID</b></label>
-					<input
-						type="number"
-						name="pid"
-                        min="100000"
-                        max="999999"
-						required
-					/>
+					<input type="number" name="pid" min="100000" max="999999" required />
 				</div>
 				<div class="form__div">
 					<label for="password"><b>Password</b></label>
@@ -38,8 +28,8 @@
 						type="password"
 						name="password"
 						required
-                        minlength="8"
-                        maxlength="15"
+						minlength="8"
+						maxlength="15"
 					/>
 				</div>
 				<div class="form__div">
@@ -48,14 +38,15 @@
 						type="password"
 						name="Cpassword"
 						required
-                        minlength="8"
-                        maxlength="15"
+						minlength="8"
+						maxlength="15"
 					/>
 				</div>
 				<div class="form__div">
 					<button type="submit" class="submit__btn">Create Account</button>
 				</div>
 			</form>
+			<div class="link__div">Already have an account ? <a href="/client/userlogin">Login</a></div>
 		</section>
 	</body>
 </html>

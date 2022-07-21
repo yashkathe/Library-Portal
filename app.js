@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 
-URI = "mongodb+srv://Yash:Yash2202@cluster0.kinn93w.mongodb.net/LibraryDB?w=majority";
+URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.kinn93w.mongodb.net/LibraryDB?w=majority`;
 
 const app = express();
 

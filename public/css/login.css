@@ -61,7 +61,7 @@ button, input[type="submit"], input[type="reset"] {
 	cursor: pointer;
 	width: auto;
     box-sizing: border-box;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     border-radius: 45px;
     transition: 1s;
 }
@@ -72,4 +72,20 @@ button, input[type="submit"], input[type="reset"] {
 	background-color: rgb(32, 172, 194);
 	color: rgb(46, 45, 45);
     transition: 0.5s ;
+    padding: 1rem 1.8rem;
+}
+
+.signup__section > div {
+	font-style: italic;
+	text-align: center;
+	margin-top: 3%;
+	font-size: 1.5rem;
+}
+
+.link__div > a {
+	color: #0b0b60;
+}
+
+.link__div > a:hover {
+	text-decoration: underline;
 }

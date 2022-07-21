@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs")
 const User = require("../models/user")
 
 exports.getSignUpPage = (req,res,next) => {
-    res.render("../views/client/usersignup.ejs", {pageTitle: "User Sign Up"})
+    res.render("../views/client/usersignup.ejs", {pageTitle: "Create a new account"})
 }
 
 exports.getLoginPage = (req, res, next) => {
