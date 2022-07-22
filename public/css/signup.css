@@ -4,33 +4,7 @@ body {
 	margin: 0;
 }
 
-/* header */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* end */
-.login_section {
+.signup__section {
 	background: rgba(13, 151, 172, 0.9);
 	box-shadow: 0 2px 8px rgb(48, 71, 94);
 	margin-top: 5rem;
@@ -58,17 +32,29 @@ form > div {
 	border-radius: 40px;
 	height: 2rem;
 	width: 20%;
-    /* text-align: center; */
+    text-align: center;
 }
 
-button {
+/* input[type=text], input[type=password] { */
+/* width: auto; */
+/* padding: 12px 20px; */
+/* margin: 8px 0; */
+/* display: inline-block; */
+/* border: 1px solid #ccc; */
+/* box-sizing: border-box; */
+/* } */
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
 }
 
-.login__btn {
+.submit__btn {
     margin-top: 2%;
 	background-color: rgb(13, 118, 134);
 	border: 0.8px solid rgb(58, 58, 58);
@@ -80,8 +66,8 @@ button {
     transition: 1s;
 }
 
-.login__btn:hover,
-.login__btn:active {
+.submit__btn:hover,
+.submit__btn:active {
 	border: 0.8px solid rgb(58, 58, 58);
 	background-color: rgb(32, 172, 194);
 	color: rgb(46, 45, 45);
@@ -89,3 +75,17 @@ button {
     padding: 1rem 1.8rem;
 }
 
+.signup__section > div {
+	font-style: italic;
+	text-align: center;
+	margin-top: 3%;
+	font-size: 1.5rem;
+}
+
+.link__div > a {
+	color: #0b0b60;
+}
+
+.link__div > a:hover {
+	text-decoration: underline;
+}
