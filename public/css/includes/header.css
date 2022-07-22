@@ -118,3 +118,14 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
+
+/* logo in header  */
+
+.sfit__logo > img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.sfit__logo{
+    height: 8vh;
+}

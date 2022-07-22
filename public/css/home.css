@@ -136,6 +136,7 @@ a:hover {
 	background-color: rgb(32, 172, 194);
 	color: rgb(46, 45, 45);
     transition: 0.5s ;
+	border-radius: 1.5rem 0rem 1.5rem 0;
 }
 
 .user__links{
@@ -156,4 +157,16 @@ a:hover {
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.8);
 	border-radius: 1rem 0rem 1rem 0;
+    transition: 0.2s;
+}
+
+/* logo in header  */
+
+.sfit__logo > img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.sfit__logo{
+    height: 8vh;
 }

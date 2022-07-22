@@ -6,7 +6,7 @@ exports.getSignUpPage = (req,res,next) => {
 }
 
 exports.getLoginPage = (req, res, next) => {
-    res.render("../views/client/userlogin.ejs")
+    res.render("../views/client/userlogin.ejs", {pageTitle:"Login into your account"})
 }
 
 exports.postSignUpPage = (req,res,next) => {
