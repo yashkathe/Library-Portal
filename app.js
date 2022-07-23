@@ -34,7 +34,7 @@ mongoose.connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(result => {
-    app.listen(3005);
+    app.listen(3000);
 }).catch(err => {
     console.log(err);
 });
