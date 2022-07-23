@@ -7,59 +7,59 @@ body {
 /* header */
 
 .main-header {
-    margin-top: 5vh;
-    height: auto;
-    width: auto;
-    z-index: 10;
-    /* padding: px; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
-    border-radius: 40px;
-    background-color: rgba(13, 151, 172, 0.9);
+	margin-top: 5vh;
+	height: auto;
+	width: auto;
+	z-index: 10;
+	/* padding: px; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+	border-radius: 40px;
+	background-color: rgba(13, 151, 172, 0.9);
 }
 
 @media (max-width: 78rem) {
-    .main-header {
-        margin-left: 3rem;
-        margin-right: 3rem;
-    }
+	.main-header {
+		margin-left: 3rem;
+		margin-right: 3rem;
+	}
 }
 
 @media (max-width: 40rem) {
-    .main-header {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
+	.main-header {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
 }
 
 .header__div1 {
-    display: inline-block;
-    width: 60%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0px 3rem;
-    font-size: 2rem;
-    font-weight: bold;
+	display: inline-block;
+	width: 60%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0px 3rem;
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .header__div2 {
-    display: inline-block;
-    width: 42%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0px 3rem;
-    font-size: 1rem;
+	display: inline-block;
+	width: 42%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0px 3rem;
+	font-size: 1rem;
 }
 
 .header__div1 > h1 {
@@ -70,21 +70,21 @@ body {
 }
 
 @media (max-width: 78rem) {
-    .header__div1 > h1 {
-        font-size: 2.5rem;
-    }
+	.header__div1 > h1 {
+		font-size: 2.5rem;
+	}
 }
 
 @media (max-width: 65rem) {
-    .header__div1 > h1 {
-        font-size: 1.7rem;
-    }
+	.header__div1 > h1 {
+		font-size: 1.7rem;
+	}
 }
 
 @media (max-width: 40rem) {
-    .header__div1 > h1 {
-        font-size: 1.3rem;
-    }
+	.header__div1 > h1 {
+		font-size: 1.3rem;
+	}
 }
 
 .header__div1 > h2 {
@@ -93,21 +93,21 @@ body {
 }
 
 @media (max-width: 65rem) {
-    .header__div1 > h2 {
-        font-size: 1.75rem;
-    }
+	.header__div1 > h2 {
+		font-size: 1.75rem;
+	}
 }
 
 @media (max-width: 65rem) {
-    .header__div1 > h2 {
-        font-size: 1.2rem;
-    }
+	.header__div1 > h2 {
+		font-size: 1.2rem;
+	}
 }
 
 @media (max-width: 40rem) {
-    .header__div2 {
-        font-size: 1.3rem;
-    }
+	.header__div2 {
+		font-size: 1.3rem;
+	}
 }
 
 .main-header2 > a {
@@ -135,38 +135,69 @@ a:hover {
 	border: 0.8px solid rgb(58, 58, 58);
 	background-color: rgb(32, 172, 194);
 	color: rgb(46, 45, 45);
-    transition: 0.5s ;
+	transition: 0.5s;
 	border-radius: 1.5rem 0rem 1.5rem 0;
 }
 
-.user__links{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20vh;
+.user__links {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20vh;
 }
 
-.a__user{
-    border: 0.5px solid rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
+.a__user {
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
 	padding: 1rem;
-    margin: 2rem;
+	margin: 2rem;
 	font-size: 1.5rem;
 	background-color: rgb(13, 118, 134);
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.8);
 	border-radius: 1rem 0rem 1rem 0;
-    transition: 0.2s;
+	transition: 0.2s;
 }
 
 /* logo in header  */
 
-.sfit__logo > img{
-    max-height: 100%;
-    max-width: 100%;
+.sfit__logo > img {
+	max-height: 100%;
+	max-width: 100%;
 }
 
-.sfit__logo{
-    height: 8vh;
+.sfit__logo {
+	height: 8vh;
+}
+
+/* logout button */
+button,
+input[type="submit"],
+input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.logout__btn {
+	font-size: 1.25rem;
+	box-sizing: border-box;
+	padding: 10px;
+	border: 1px solid rgb(39, 39, 39);
+    border-radius: 1rem 1rem;
+    transition: 0.5s;
+    box-shadow:  1px 1px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgb(32, 172, 194);
+}
+
+.logout__btn:active,
+.logout__btn:hover{
+    border-radius: 1.5rem 1.5rem;
+    transition: 1s;
+    box-shadow:  1px 1px 10px rgba(0, 0, 0, 0.5);
 }

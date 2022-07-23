@@ -90,3 +90,45 @@ button, input[type="submit"], input[type="reset"] {
 	text-decoration: underline;
 }
 
+
+
+/*  */
+.login_section {
+	background: rgba(13, 151, 172, 0.9);
+	box-shadow: 0 2px 8px rgb(48, 71, 94);
+	margin-top: 5rem;
+	box-sizing: border-box;
+	width: auto;
+	padding: 3rem;
+	margin-left: 15%;
+	margin-right: 15%;
+	border-radius: 40px;
+}
+
+.login__btn {
+    margin-top: 2%;
+	background-color: rgb(13, 118, 134);
+	border: 0.8px solid rgb(58, 58, 58);
+	cursor: pointer;
+	width: auto;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    border-radius: 45px;
+    transition: 1s;
+}
+
+.login__btn:hover,
+.login__btn:active {
+	border: 0.8px solid rgb(58, 58, 58);
+	background-color: rgb(32, 172, 194);
+	color: rgb(46, 45, 45);
+    transition: 0.5s ;
+    padding: 1rem 1.8rem;
+}
+
+.link__div {
+	font-style: italic;
+	text-align: center;
+	margin-top: 3%;
+	font-size: 1.5rem;
+}
