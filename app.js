@@ -35,7 +35,7 @@ app.use(session({
     secret:"utLHDQAfmyz2xnYpiCsv4EPFo",
     resave:false,//dont save session on every req res
     saveUninitialized:false,
-    store:store
+    store:store,
 }))
 
 //setting user in session

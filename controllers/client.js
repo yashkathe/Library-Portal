@@ -1,12 +1,21 @@
 const bcrypt = require("bcryptjs");
+const QRCode = require("qrcode");
 const User = require("../models/user");
 
 exports.getSignUpPage = (req, res, next) => {
-    res.render("../views/client/usersignup.ejs", { pageTitle: "Create a new account" });
+    res.render("../views/client/usersignup.ejs",
+        {
+            pageTitle: "Create a new account",
+            routeFor: "auth"
+        });
 };
 
 exports.getLoginPage = (req, res, next) => {
-    res.render("../views/client/userlogin.ejs", { pageTitle: "Login into your account" });
+    res.render("../views/client/userlogin.ejs",
+        {
+            pageTitle: "Login into your account",
+            routeFor: "auth"
+        });
 };
 
 exports.postSignUpPage = (req, res, next) => {
@@ -53,12 +62,12 @@ exports.postLoginPage = (req, res, next) => {
                 doPasswordsMatch => {
                     if(doPasswordsMatch) {
                         req.session.isLoggedIn = true,
-                        req.session.user = user;
+                            req.session.user = user;
                         return req.session.save(err => {
                             if(err) {
                                 console.log(err);
                             }
-                            res.redirect("/");
+                            res.redirect("/client/home");
                         });
                     }
                     //passwords dont match
@@ -78,5 +87,50 @@ exports.postLogout = (req, res, next) => {
             console.log(err);
         }
         res.redirect("/");
+    });
+};
+
+exports.getUserHomePage = async (req, res, next) => {
+    const userID = req.session.user._id.toString();
+    try {
+        const user = await User.findById(userID);
+        res.render("../views/client/clienthome.ejs",
+            {
+                pageTitle: "Client Home Page",
+                id: user._id,
+                routeFor: "client"
+            });
+    }
+    catch {
+        err => {
+            console.log(err);
+        };
+    }
+};
+
+exports.getUserProfile = async (req, res, next) => {
+    const userId = req.params.id;
+    try {
+        const user = await User.findById(userId);
+        res.render('../views/client/clientProfile.ejs', {
+            pageTitle: " User profile ",
+            user,
+            routeFor: "client"
+        });
+
+    } catch {
+        err => {
+            console.log(err);
+        };
+    }
+};
+
+exports.getUserBarcode = async (req, res, next) => {
+    const userID = req.params.id;
+    const barcodeURL = await QRCode.toDataURL(userID);
+    res.render('../views/client/clientBarcode.ejs', {
+        pageTitle: "Barcode",
+        barcodeURL,
+        routeFor: "client"
     });
 };

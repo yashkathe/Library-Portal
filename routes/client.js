@@ -6,8 +6,15 @@ const controller = require('../controllers/client')
 // client/usersignup
 router.get("/usersignup", controller.getSignUpPage)
 
-//client/userlogin
+// client/userlogin
 router.get("/userlogin", controller.getLoginPage)
+
+// client/home
+router.get("/home", controller.getUserHomePage)
+
+router.get("/home/profile/:id", controller.getUserProfile)
+
+router.get("/home/barcode/:id", controller.getUserBarcode)
 
 router.post("/signup", controller.postSignUpPage)
 
