@@ -97,7 +97,7 @@ exports.getUserHomePage = async (req, res, next) => {
         res.render("../views/client/clienthome.ejs",
             {
                 pageTitle: "Client Home Page",
-                id: user._id,
+                id: user,
                 routeFor: "client"
             });
     }

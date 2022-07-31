@@ -7,8 +7,11 @@
 		<h2>Virtual Library</h2>
 	</div>
 	<div class="header__div2">
-		<% if (routeFor = "client") { %>
+		<% if (routeFor === "client") { %>
 		<a href="/client/home">Home Page</a>
+        <form method="post" action="/client/logout">
+            <button type="submit" class="logout__btn"> Log out </button>
+        </form>
 		<% } else { %>
 		<a href="/">Home Page</a>
 		<% } %>
