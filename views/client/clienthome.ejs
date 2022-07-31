@@ -5,13 +5,22 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/includes/header.css" />
+		<link rel="stylesheet" href="/clienthome.css" />
         <title><%= pageTitle %></title>
 	</head>
 	<body>
 		<%- include("../includes/header.ejs") %>
-        <div>
-            <a href="/client/home/barcode/<%= id %>">View my barcode</a>
-            <a href="/client/home/profile/<%= id %>">View your profile</a>
+        <div class="user_home">
+			<div class="user_element">
+				<a href="/client/home/profile/<%= id %>" class="user_options">View my profile</a>
+			</div>
+			<div class="user_element">
+				<a href="/client/home/barcode/<%= id %>" class="user_options">View my barcode</a>
+			</div>
+			<div class="user_element">
+				<a href="/client/home/profile/<%= id %>" class="user_options">View logs</a>
+			</div>
+
         </div>
 	</body>
 </html>

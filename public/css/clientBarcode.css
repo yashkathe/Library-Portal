@@ -1,0 +1,16 @@
+body {
+	background-color: rgb(39, 39, 39);
+	padding: 0;
+	margin: 0;
+}
+
+.user_barcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.user_barcode > img {
+    height: 20rem;
+}
