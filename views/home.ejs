@@ -1,39 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="includes/header.css" />
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <%- include("./includes/header.ejs") %>
+        <section class="user__links">
+            <div>
+                <a href="/client/usersignup" class="a__user"> User Sign Up </a>
+            </div>
+            <div>
+                <a href="/client/userlogin" class="a__user"> User Log In </a>
+            </div>
+        </section>
+</body>
+
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="home.css" />
-		<title><%= pageTitle %></title>
-	</head>
-	<body>
-		<header class="main-header">
-			<div class="header__div1">
-				<div class="sfit__logo">
-					<img src="/sfitlogo.png" />
-				</div>
-				<h1>SFIT -</h1>
-				<h2>Virtual Library</h2>
-			</div>
-			<div class="header__div2">
-				<% if(session.isLoggedIn) { %> 
-                <form method="post" action="/client/logout">
-                    <button type="submit" class="logout__btn"> Log out </button>
-                </form>
-                <% } else {%>
-				<a>Admin Login</a>
-				<% }%>
-			</div>
-		</header>
 
-		<section class="user__links">
-			<div>
-				<a href="/client/usersignup" class="a__user"> User Sign Up </a>
-			</div>
-			<div>
-				<a href="/client/userlogin" class="a__user"> User Log In </a>
-			</div>
-		</section>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Responsive Sidebar Menu For Mobile</title>
+	<link rel="stylesheet" type="text/css" href="/home.css">
+    <link rel="stylesheet" type="text/css" href="includes/header.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include("./includes/header.ejs") %>
+</body>
+
 </html>

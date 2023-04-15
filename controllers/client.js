@@ -62,7 +62,7 @@ exports.postLoginPage = (req, res, next) => {
                 doPasswordsMatch => {
                     if(doPasswordsMatch) {
                         req.session.isLoggedIn = true,
-                            req.session.user = user;
+                        req.session.user = user;
                         return req.session.save(err => {
                             if(err) {
                                 console.log(err);
@@ -94,10 +94,11 @@ exports.getUserHomePage = async (req, res, next) => {
     const userID = req.session.user._id.toString();
     try {
         const user = await User.findById(userID);
+        console.log(user);
         res.render("../views/client/clienthome.ejs",
             {
                 pageTitle: "Client Home Page",
-                id: user,
+                id: user._id,
                 routeFor: "client"
             });
     }
@@ -133,4 +134,8 @@ exports.getUserBarcode = async (req, res, next) => {
         barcodeURL,
         routeFor: "client"
     });
+};
+
+exports.getSearchBooks = (req, res, next) => {
+
 };

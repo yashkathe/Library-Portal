@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="/includes/header.css" />
-		<link rel="stylesheet" href="/clienthome.css" />
-        <title><%= pageTitle %></title>
-	</head>
-	<body>
-		<%- include("../includes/header.ejs") %>
-        <div class="user_home">
-			<div class="user_element">
-				<a href="/client/home/profile/<%= id %>" class="user_options">View my profile</a>
-			</div>
-			<div class="user_element">
-				<a href="/client/home/barcode/<%= id %>" class="user_options">View my barcode</a>
-			</div>
-			<div class="user_element">
-				<a href="/client/home/profile/<%= id %>" class="user_options">View logs</a>
-			</div>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/includes/header.css" />
+    <link rel="stylesheet" href="/clienthome.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <%- include("../includes/header.ejs") %>
+        <div class="user_home">
+            <div class="user_element">
+                <a href="/client/home/profile/<%= id %>" class="user_options">View my profile</a>
+            </div>
+            <div class="user_element">
+                <a href="/client/home/barcode/<%= id %>" class="user_options">View my barcode</a>
+            </div>
+            <div class="user_element">
+                <a href="/client/home/profile/<%= id %>" class="user_options">View logs</a>
+            </div>
+            <div class="user_element">
+                <a href="/client/home/searchBooks" class="user_options">Search Books</a>
+            </div>
         </div>
-	</body>
+</body>
+
 </html>

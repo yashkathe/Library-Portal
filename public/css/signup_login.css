@@ -5,15 +5,14 @@ body {
 }
 
 .signup__section {
-	background: rgba(13, 151, 172, 0.9);
+	background: #262626;
 	box-shadow: 0 2px 8px rgb(48, 71, 94);
-	margin-top: 5rem;
+	margin-top: 15vh;
 	box-sizing: border-box;
-	width: auto;
 	padding: 3rem;
-	margin-left: 15%;
-	margin-right: 15%;
-	border-radius: 40px;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	border-radius: 25px;
 }
 
 form > div {
@@ -26,23 +25,16 @@ form > div {
 
 .form__div label {
 	padding: 2px;
+    margin-bottom: 1vh;
+	color: rgb(180, 178, 178);
 }
 
 .form__div input {
 	border-radius: 40px;
 	height: 2rem;
-	width: 20%;
+	width: 80%;
     text-align: center;
 }
-
-/* input[type=text], input[type=password] { */
-/* width: auto; */
-/* padding: 12px 20px; */
-/* margin: 8px 0; */
-/* display: inline-block; */
-/* border: 1px solid #ccc; */
-/* box-sizing: border-box; */
-/* } */
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -55,15 +47,16 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .submit__btn {
-    margin-top: 2%;
-	background-color: rgb(13, 118, 134);
+	background-color: #dad1cf;
 	border: 0.8px solid rgb(58, 58, 58);
 	cursor: pointer;
-	width: auto;
+	width: 50%;
     box-sizing: border-box;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1rem;
     border-radius: 45px;
     transition: 1s;
+    font-size: 0.8rem;
+    margin-top: 2vh;
 }
 
 .submit__btn:hover,
@@ -76,59 +69,17 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .signup__section > div {
+	color: rgb(180, 178, 178);
 	font-style: italic;
 	text-align: center;
-	margin-top: 3%;
-	font-size: 1.5rem;
+	margin-top: 5vh;
+	font-size: 1rem;
 }
 
 .link__div > a {
-	color: #0b0b60;
+	color: #6868ff;
 }
 
 .link__div > a:hover {
 	text-decoration: underline;
-}
-
-
-
-/*  */
-.login_section {
-	background: rgba(13, 151, 172, 0.9);
-	box-shadow: 0 2px 8px rgb(48, 71, 94);
-	margin-top: 5rem;
-	box-sizing: border-box;
-	width: auto;
-	padding: 3rem;
-	margin-left: 15%;
-	margin-right: 15%;
-	border-radius: 40px;
-}
-
-.login__btn {
-    margin-top: 2%;
-	background-color: rgb(13, 118, 134);
-	border: 0.8px solid rgb(58, 58, 58);
-	cursor: pointer;
-	width: auto;
-    box-sizing: border-box;
-    padding: 1rem 1.5rem;
-    border-radius: 45px;
-    transition: 1s;
-}
-
-.login__btn:hover,
-.login__btn:active {
-	border: 0.8px solid rgb(58, 58, 58);
-	background-color: rgb(32, 172, 194);
-	color: rgb(46, 45, 45);
-    transition: 0.5s ;
-    padding: 1rem 1.8rem;
-}
-
-.link__div {
-	font-style: italic;
-	text-align: center;
-	margin-top: 3%;
-	font-size: 1.5rem;
 }
