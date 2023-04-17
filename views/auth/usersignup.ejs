@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" /a>
+    <link rel="stylesheet" href="/auth/signup_login.css" />
+    <link rel="stylesheet" href="/includes/header.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title><%= pageTitle %></title>
+</head>
+
+<body>
+
+    <%- include("../includes/header.ejs") %>
+        <section class="signup__section">
+            <% if (errorMessage) { %>
+                <div class="user-message user-message--error">
+                    <%= errorMessage %>
+                </div>
+                <% } %>
+                    <form action="/client/signup" method="post">
+                        <div class="form__div">
+                            <label for="email-Id"><b>Email-Id</b></label>
+                            <input type="text" name="email" value="<% if (errorMessage) { %><%= email %><% } %>"
+                                required />
+                        </div>
+                        <div class="form__div">
+                            <label for="uname"><b>PID</b></label>
+                            <input type="number" name="pid" value="<% if (errorMessage) { %><%= pid %><% } %>"
+                                min="100000" max="999999" required />
+                        </div>
+                        <div class="form__div">
+                            <label for="password"><b>Password</b></label>
+                            <input type="password" name="password"
+                                value="<% if (errorMessage) { %><%= password %><% } %>" required minlength="8"
+                                maxlength="15" />
+                        </div>
+                        <div class="form__div">
+                            <label for="password"><b>Confirm Password</b></label>
+                            <input type="password" name="Cpassword"
+                                value="<% if (errorMessage) { %><%= Cpassword %><% } %>" required minlength="8"
+                                maxlength="15" />
+                        </div>
+                        <div class="form__div">
+                            <button type="submit" class="submit__btn">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="link__div">
+                        Already have an account ? <a href="/client/userlogin">Login</a>
+                    </div>
+        </section>
+</body>
+
+</html>

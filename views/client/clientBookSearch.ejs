@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/clientIssuedBooks.css" />
+    <link rel="stylesheet" href="/includes/header.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <%- include("../includes/header.ejs") %>
+        <main class="main-issued2">
+            <div class="user_element">
+                <form class="searchForm">
+                    <input id="search" type="text" name="search" placeholder="Search for books" />
+                    <input type="submit" value="Search"></button>
+                </form>
+            </div>
+            <% if (books.length> 0) { %>
+                <div class="grid">
+                    <% for (let book of books) { %>
+                        <section class="issued-book__section">
+                            <div class="title">
+                                <h3>
+                                    <%= book.title %>
+                                </h3>
+                            </div>
+                            <div class="info">
+                                <div class="info_childone">
+                                    <div>
+                                        <p>
+                                            <%= book.description %>
+                                        </p>
+                                    </div>
+                                    <div class="child_childinfo">
+                                        <div>
+                                            <h6>Page Count:</h6>
+                                            <p>
+                                                <%= book.pageCount%>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h6>Langauge:</h6>
+                                            <p>
+                                                <%= book.language %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_childtwo">
+                                    <img src="<%= book.image %>" alt="<%= book.title %>" />
+                                </div>
+                            </div>
+                        </section>
+                        <% } %>
+                            <div class="pagination">
+                                <% for(let i=1; i <=totalPages; i++) { %>\
+                                    <a href="?search=<%=search%>&page=<%=i%>">
+                                        <%=i %>
+                                    </a>
+                                    <br>
+                                    <% }%>
+                            </div>
+                </div>
+                <% } else { %>
+                    <section class="error__section">
+                        <h1>No Results</h1>
+                        <p>The book you are looking for is not available in our library</p>
+                    </section>
+                    <% } %>
+</body>
+
+</html>

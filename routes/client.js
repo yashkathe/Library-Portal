@@ -18,6 +18,8 @@ router.get("/home/barcode/:id", controller.getUserBarcode)
 
 router.get("/home/issuedBooks/:id", controller.getIssuedBooksById)
 
+router.get("/searchBooks", controller.getSearchBooksPage)
+
 router.post("/signup", controller.postSignUpPage)
 
 router.post("/login", controller.postLoginPage)

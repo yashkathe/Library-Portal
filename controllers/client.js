@@ -2,23 +2,24 @@ const bcrypt = require("bcryptjs");
 const QRCode = require("qrcode");
 const User = require("../models/user");
 const Book = require("../models/book");
-const mongoose = require("mongoose");
 
 exports.getSignUpPage = (req, res, next) => {
-    res.render("../views/client/usersignup.ejs",
+    res.render("../views/auth/usersignup.ejs",
         {
             pageTitle: "Create a new account",
             headerTitle: "Sign Up",
-            routeFor: "auth"
+            routeFor: "auth",
+            errorMessage: null
         });
 };
 
 exports.getLoginPage = (req, res, next) => {
-    res.render("../views/client/userlogin.ejs",
+    res.render("../views/auth/userlogin.ejs",
         {
             pageTitle: "Login into your account",
             headerTitle: "Log In",
-            routeFor: "auth"
+            routeFor: "auth",
+            errorMessage: null
         });
 };
 
@@ -31,10 +32,30 @@ exports.postSignUpPage = (req, res, next) => {
     User.findOne({ email: email, pid: pid }).then(
         userDoc => {
             if(userDoc) {
-                return res.redirect('/client/usersignup');
+                return res.status(500).render("../views/auth/usersignup.ejs",
+                    {
+                        pageTitle: "Create a new account",
+                        headerTitle: "Sign Up",
+                        routeFor: "auth",
+                        errorMessage: "User already exists",
+                        email,
+                        pid,
+                        password,
+                        Cpassword
+                    });
             }
             if(password !== Cpassword) {
-                return res.redirect('/client/usersignup');
+                return res.status(500).render("../views/auth/usersignup.ejs",
+                    {
+                        pageTitle: "Create a new account",
+                        headerTitle: "Sign Up",
+                        routeFor: "auth",
+                        errorMessage: "Passwords do not match",
+                        email,
+                        pid,
+                        password,
+                        Cpassword
+                    });
             }
             return bcrypt.hash(password, 8).then(
                 hashedPassword => {
@@ -59,7 +80,15 @@ exports.postLoginPage = (req, res, next) => {
     User.findOne({ $or: [ { email: uname }, { pid: uname } ] }).then(
         user => {
             if(!user) {
-                return res.redirect('/client/userlogin');
+                return res.status(500).render("../views/auth/usersignup.ejs",
+                    {
+                        pageTitle: "Create a new account",
+                        headerTitle: "Sign Up",
+                        routeFor: "auth",
+                        errorMessage: "No such user exists",
+                        uname,
+                        password,
+                    });
             }
 
             bcrypt.compare(password, user.password).then(
@@ -75,13 +104,27 @@ exports.postLoginPage = (req, res, next) => {
                         });
                     }
                     //passwords dont match
-                    res.redirect("/client/userlogin");
+                    return res.status(500).render("../views/auth/userlogin.ejs",
+                        {
+                            pageTitle: "Create a new account",
+                            headerTitle: "Sign Up",
+                            routeFor: "auth",
+                            errorMessage: "Invalid username or password entered",
+                            uname,
+                            password,
+                        });
                 });
         }
     ).catch(err => {
-        //email or pid doesnt exist
-        console.log(err);
-        res.redirect("/client/login");
+        return res.status(500).render("../views/auth/userlogin.ejs",
+            {
+                pageTitle: "Create a new account",
+                headerTitle: "Sign Up",
+                routeFor: "auth",
+                errorMessage: "No such user exists",
+                uname,
+                password,
+            });
     });
 };
 
@@ -151,4 +194,55 @@ exports.getIssuedBooksById = async (req, res, next) => {
         routeFor: "client",
         books
     });
+};
+
+exports.getSearchBooksPage = async (req, res, next) => {
+    try {
+
+        let search = "";
+        if(req.query.search) {
+            search = req.query.search;
+        }
+
+        let page = 1;
+        if(req.query.page) {
+            page = req.query.page;
+        }
+
+        const limit = 4;
+
+        const books = await Book.find({
+            $or: [
+                { title: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { description: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        })
+            .limit(limit * 1)
+            .skip(((page - 1) * limit))
+            .exec();
+
+        const count = await Book.find({
+            $or: [
+                { title: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { description: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        }).countDocuments()
+
+
+        res.render('../views/client/clientBookSearch.ejs', {
+            pageTitle: "Search Books",
+            headerTitle: "Search Books",
+            routeFor: "client",
+            books,
+            search,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+        }
+        );
+
+    } catch(err) {
+        console.log(err);
+    }
 };

@@ -11,7 +11,7 @@ header {
     top: 0;
     left: 0;
     padding: 0 100px;
-    background: #262626;
+    background: #1f1b24;
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid #BB86FC;
@@ -20,7 +20,7 @@ header {
 }
 
 header .logo {
-    color: #c89bfa;
+    color: #f0f0f0;
     height: 50px;
     line-height: 50px;
     font-size: 24px;
@@ -82,7 +82,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .menu-toggle {
-    color: #c89bfa;
+    color: #dfdfdf;
     float: right;
     line-height: 50px;
     font-size: 24px;
