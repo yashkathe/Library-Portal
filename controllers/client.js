@@ -1,11 +1,14 @@
 const bcrypt = require("bcryptjs");
 const QRCode = require("qrcode");
 const User = require("../models/user");
+const Book = require("../models/book");
+const mongoose = require("mongoose");
 
 exports.getSignUpPage = (req, res, next) => {
     res.render("../views/client/usersignup.ejs",
         {
             pageTitle: "Create a new account",
+            headerTitle: "Sign Up",
             routeFor: "auth"
         });
 };
@@ -14,6 +17,7 @@ exports.getLoginPage = (req, res, next) => {
     res.render("../views/client/userlogin.ejs",
         {
             pageTitle: "Login into your account",
+            headerTitle: "Log In",
             routeFor: "auth"
         });
 };
@@ -62,7 +66,7 @@ exports.postLoginPage = (req, res, next) => {
                 doPasswordsMatch => {
                     if(doPasswordsMatch) {
                         req.session.isLoggedIn = true,
-                        req.session.user = user;
+                            req.session.user = user;
                         return req.session.save(err => {
                             if(err) {
                                 console.log(err);
@@ -94,10 +98,10 @@ exports.getUserHomePage = async (req, res, next) => {
     const userID = req.session.user._id.toString();
     try {
         const user = await User.findById(userID);
-        console.log(user);
         res.render("../views/client/clienthome.ejs",
             {
                 pageTitle: "Client Home Page",
+                headerTitle: `Welcome ${user.email.split('@')[ 0 ].charAt(0).toLocaleUpperCase()}${user.email.split('@')[ 0 ].slice(1)}`,
                 id: user._id,
                 routeFor: "client"
             });
@@ -131,11 +135,20 @@ exports.getUserBarcode = async (req, res, next) => {
     const barcodeURL = await QRCode.toDataURL(userID);
     res.render('../views/client/clientBarcode.ejs', {
         pageTitle: "Barcode",
+        headerTitle: "Login Barcode",
         barcodeURL,
         routeFor: "client"
     });
 };
 
-exports.getSearchBooks = (req, res, next) => {
-
+exports.getIssuedBooksById = async (req, res, next) => {
+    const userID = req.params.id;
+    const books = await Book.find({ issuedBy: userID });
+    console.log(books);
+    res.render('../views/client/clientIssuedBooks.ejs', {
+        pageTitle: "Issued Books",
+        headerTitle: "Issued Books",
+        routeFor: "client",
+        books
+    });
 };

@@ -1,56 +1,62 @@
 body {
-	background-color: rgb(39, 39, 39);
-	padding: 0;
-	margin: 0;
+    background-color: #262626 !important;
+    padding: 0;
+    margin: 0;
 }
 
 .signup__section {
-	background: #262626;
-	box-shadow: 0 2px 8px rgb(48, 71, 94);
-	margin-top: 15vh;
-	box-sizing: border-box;
-	padding: 3rem;
-	margin-left: 5vw;
-	margin-right: 5vw;
-	border-radius: 25px;
+    background: #121212;
+    box-shadow: 0 0px 6px #BB86FC;
+    margin-top: 15vh;
+    box-sizing: border-box;
+    padding: 3rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 25px;
 }
 
-form > div {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	padding-bottom: 1rem;
+form>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
 }
 
 .form__div label {
-	padding: 2px;
+    padding: 2px;
     margin-bottom: 1vh;
-	color: rgb(180, 178, 178);
+    color: #c4c4c4;
 }
 
 .form__div input {
-	border-radius: 40px;
-	height: 2rem;
-	width: 80%;
+    border-radius: 40px;
+    height: 2rem;
+    width: 80%;
     text-align: center;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.form__div input:active{
+    border: 0.8px solid #BB86FC;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .submit__btn {
-	background-color: #dad1cf;
-	border: 0.8px solid rgb(58, 58, 58);
-	cursor: pointer;
-	width: 50%;
+    background-color: #BB86FC;
+    border: 0.8px solid rgb(58, 58, 58);
+    cursor: pointer;
+    width: 50%;
     box-sizing: border-box;
     padding: 0.8rem 1rem;
     border-radius: 45px;
@@ -61,25 +67,25 @@ button, input[type="submit"], input[type="reset"] {
 
 .submit__btn:hover,
 .submit__btn:active {
-	border: 0.8px solid rgb(58, 58, 58);
-	background-color: rgb(32, 172, 194);
-	color: rgb(46, 45, 45);
-    transition: 0.5s ;
+    border: 0.8px solid rgb(58, 58, 58);
+    background-color: rgb(32, 172, 194);
+    color: rgb(46, 45, 45);
+    transition: 0.5s;
     padding: 1rem 1.8rem;
 }
 
-.signup__section > div {
-	color: rgb(180, 178, 178);
-	font-style: italic;
-	text-align: center;
-	margin-top: 5vh;
-	font-size: 1rem;
+.signup__section>div {
+    color: rgb(180, 178, 178);
+    font-style: italic;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 1rem;
 }
 
-.link__div > a {
-	color: #6868ff;
+.link__div>a {
+    color: #BB86FC;
 }
 
-.link__div > a:hover {
-	text-decoration: underline;
+.link__div>a:hover {
+    text-decoration: underline;
 }

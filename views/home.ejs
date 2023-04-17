@@ -1,31 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="includes/header.css" />
-    <title>
-        <%= pageTitle %>
-    </title>
-</head>
-
-<body>
-    <%- include("./includes/header.ejs") %>
-        <section class="user__links">
-            <div>
-                <a href="/client/usersignup" class="a__user"> User Sign Up </a>
-            </div>
-            <div>
-                <a href="/client/userlogin" class="a__user"> User Log In </a>
-            </div>
-        </section>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +13,21 @@
 
 <body>
     <%- include("./includes/header.ejs") %>
+    <section class="user__links">
+        <div>
+            <a href="/client/usersignup" class="a__user"> User Sign Up </a>
+        </div>
+        <div>
+            <a href="/client/userlogin" class="a__user"> User Sign In </a>
+        </div>
+    </section>
+        <div class="info">
+            <p>
+
+                The Library Automation System is a project aimed at developing a computerized system to
+                automate all the daily tasks of the library with minimal human intervention.
+            </p>
+        </div>
 </body>
 
 </html>

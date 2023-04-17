@@ -4,3 +4,21 @@ body {
 	margin: 0;
 }
 
+
+.user_home {
+    background: #121212;
+    box-shadow: 0 0px 6px #BB86FC;
+    margin-top: 15vh;
+    box-sizing: border-box;
+    padding: 3rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 25px;
+}
+
+.user_home > div {
+    width: 100%;
+    text-align: center;
+    margin: 3vh 0;
+    padding: 1rem 0;
+}

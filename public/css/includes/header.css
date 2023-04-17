@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: url(bg.jpg);
     background-attachment: fixed;
     background-position: center;
 }
@@ -15,16 +14,19 @@ header {
     background: #262626;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #BB86FC;
+    height: 7vh;
+    text-align: center;
 }
 
 header .logo {
-    color: #fff;
+    color: #c89bfa;
     height: 50px;
     line-height: 50px;
     font-size: 24px;
     float: left;
     font-weight: bold;
+    margin-left: 1.5vw;
 }
 
 header nav {
@@ -48,6 +50,7 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     display: block;
+	color: rgb(224, 224, 224);
 }
 
 header nav ul li a:hover,
@@ -79,12 +82,13 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .menu-toggle {
-    color: #fff;
+    color: #c89bfa;
     float: right;
     line-height: 50px;
     font-size: 24px;
     cursor: pointer;
     display: none;
+    height: 100%;
 }
 
 @media (max-width: 60rem) {

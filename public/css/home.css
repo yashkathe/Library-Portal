@@ -1,73 +1,50 @@
-/* section  */
-a {
-	color: black;
-	text-decoration: none;
+body {
+    background: #121212;
 }
 
-a:hover {
-	color: rgb(36, 35, 35);
-	text-decoration: none;
-	cursor: pointer;
+/* section  */
+.a_user {
+    color: rgb(224, 224, 224);
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid rgb(255, 254, 254);
+    border-radius: 25px;
+}
+
+.a_user:hover {
+    color: rgb(36, 35, 35);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .a__user:hover,
 .a__user:active {
-	border: 0.8px solid rgb(58, 58, 58);
-	background-color: #205295;
-	transition: 0.2s;
-	border-radius: 1.5rem 0rem 1.5rem 0;
+    border: 0.8px solid rgb(58, 58, 58);
+    background-color: #205295;
+    transition: 0.2s;
+    border-radius: 1.5rem 0rem 1.5rem 0;
 }
 
 .user__links {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background-color: #262626;
+    margin: 15vh 10vw;
+    border-radius: 20px;
 }
 
-.a__user {
-	border: 0.5px solid rgba(0, 0, 0, 0.5);
-	box-sizing: border-box;
-	padding: 1rem;
-	margin: 2rem;
-	font-size: 1.5rem;
-	background-color: #205295;
-	text-decoration: none;
-	color: rgba(0, 0, 0, 0.8);
-	border-radius: 1rem 0rem 1rem 0;
-	transition: 0.2s;
+.user__links>div {
+    padding: 2rem;
 }
 
-
-
-/* logout button */
-button,
-input[type="submit"],
-input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
-
-.logout__btn {
-	font-size: 1.25rem;
-	box-sizing: border-box;
-	padding: 10px;
-	border: 1px solid rgb(39, 39, 39);
-    border-radius: 1rem 1rem;
-    transition: 0.5s;
-    box-shadow:  1px 1px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgb(32, 172, 194);
-}
-
-.logout__btn:active,
-.logout__btn:hover{
-    border-radius: 1.5rem 1.5rem;
-    transition: 1s;
-    box-shadow:  1px 1px 10px rgba(0, 0, 0, 0.5);
+.info {
+    margin-top: 8rem;
+    color: #262626;
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0 5vw;
 }

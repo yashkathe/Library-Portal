@@ -16,7 +16,7 @@ router.get("/home/profile/:id", controller.getUserProfile)
 
 router.get("/home/barcode/:id", controller.getUserBarcode)
 
-router.get("/home/searchBooks", controller.getSearchBooks)
+router.get("/home/issuedBooks/:id", controller.getIssuedBooksById)
 
 router.post("/signup", controller.postSignUpPage)
 

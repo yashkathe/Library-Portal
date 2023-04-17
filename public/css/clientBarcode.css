@@ -8,9 +8,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    margin-top: 18vh;
 }
 
 .user_barcode > img {
-    height: 20rem;
+    height: 35vh;
+}
+
+.info {
+    margin-top: 40vh;
+    color: #d3d0d0;
+    font-style: italic;
+    font-size: 1rem;
+    text-align:start;
+    padding: 0 5vw;
 }
