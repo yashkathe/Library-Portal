@@ -17,13 +17,13 @@
     <%- include("../includes/header.ejs") %>
         <section class="user_home">
             <div class="user_element">
+                <a href="/client/home/barcode/<%= id %>" class="user_options">Issue a book</a>
+            </div>
+            <div class="user_element">
+                <a href="/client/home/issuedBooks/<%= id %>" class="user_options">Return a book</a>
+            </div>
+            <div class="user_element">
                 <a href="/client/searchBooks" class="user_options">Search for a book</a>
-            </div>
-            <div class="user_element">
-                <a href="/client/home/barcode/<%= id %>" class="user_options">Barcode for Issuing</a>
-            </div>
-            <div class="user_element">
-                <a href="/client/home/issuedBooks/<%= id %>" class="user_options">Issued Books</a>
             </div>
         </section>
 </body>

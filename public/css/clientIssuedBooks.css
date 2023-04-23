@@ -23,12 +23,12 @@ body {
 
 .title>h3 {
     margin-bottom: 1vh;
-    margin-top: 0;
+    margin-top: 1vh;
     font-size: 2.5vh;
 }
 
 .issued-book__section {
-    height: 34vh;
+    height: auto;
     width: 85vw;
     margin: 2vh 5vw 2vh 5vw;
     display: flex;
@@ -110,6 +110,27 @@ body {
 }
 
 .error__section a {
+    color: #BB86FC;
+}
+
+.link{
+    border-top: 2px solid #c7c7c7;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_options{
+    color: #bdbdbd;
+    text-decoration: none;
+    border: 2px solid #BB86FC;
+    padding: 1vh 1vw;
+    font-size: 1.5vh;
+    height: auto;
+    margin: 1vh;
+    border-radius: 10px;
     color: #BB86FC;
 }
 

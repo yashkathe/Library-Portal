@@ -180,14 +180,14 @@ exports.getUserBarcode = async (req, res, next) => {
         pageTitle: "Barcode",
         headerTitle: "Login Barcode",
         barcodeURL,
-        routeFor: "client"
+        routeFor: "client",
+        info: "Use this barcode when you want to issue a book"
     });
 };
 
 exports.getIssuedBooksById = async (req, res, next) => {
     const userID = req.params.id;
     const books = await Book.find({ issuedBy: userID });
-    console.log(books);
     res.render('../views/client/clientIssuedBooks.ejs', {
         pageTitle: "Issued Books",
         headerTitle: "Issued Books",
@@ -228,7 +228,7 @@ exports.getSearchBooksPage = async (req, res, next) => {
                 { description: { $regex: '.*' + search + '.*', $options: 'i' } },
                 { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
             ]
-        }).countDocuments()
+        }).countDocuments();
 
 
         res.render('../views/client/clientBookSearch.ejs', {
@@ -242,6 +242,25 @@ exports.getSearchBooksPage = async (req, res, next) => {
         }
         );
 
+    } catch(err) {
+        console.log(err);
+    }
+};
+
+
+exports.getReturnBookBarcode = async (req, res, next) => {
+    try {
+        const userId = req.user._id.toString();
+        const isbn = req.params.id;
+        const barcodeURL = await QRCode.toDataURL(`${userId}@${isbn}`);
+        const book = await Book.find({ isbn: isbn });
+        res.render('../views/client/clientBarcode.ejs', {
+            pageTitle: "Barcode",
+            headerTitle: book[0].title,
+            barcodeURL,
+            routeFor: "client",
+            info: `Use this barcode to return your ${book[0].title} book`
+        });
     } catch(err) {
         console.log(err);
     }

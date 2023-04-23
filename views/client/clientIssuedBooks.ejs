@@ -18,6 +18,7 @@
             <% if (books.length> 0) { %>
                 <div class="grid">
                     <% for (let book of books) { %>
+                        <% console.log(book) %>
                         <section class="issued-book__section">
                             <div class="title">
                                 <h3>
@@ -49,6 +50,9 @@
                                 <div class="info_childtwo">
                                     <img src="<%= book.image %>" alt="<%= book.title %>" />
                                 </div>
+                            </div>
+                            <div class="link">
+                                <a href="/client/returnBook/<%= book.isbn %>" class="user_options">Barcode for Issuing</a>
                             </div>
                         </section>
                         <% } %>

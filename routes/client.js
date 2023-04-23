@@ -20,6 +20,8 @@ router.get("/home/issuedBooks/:id", controller.getIssuedBooksById)
 
 router.get("/searchBooks", controller.getSearchBooksPage)
 
+router.get("/returnBook/:id", controller.getReturnBookBarcode )
+
 router.post("/signup", controller.postSignUpPage)
 
 router.post("/login", controller.postLoginPage)
