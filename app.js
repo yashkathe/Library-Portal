@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, './public/assets')));
 //setting up routes
 const home = require('./routes/home');
 const clientRoutes = require('./routes/client');
+const adminRoutes = require('./routes/admin')
 
 //setting up sessions
 app.use(session({
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
 //using the routes
 app.use(home);
 app.use("/client", clientRoutes);
+app.use("/admin", adminRoutes);
 
 
 app.use((req, res, next) => {

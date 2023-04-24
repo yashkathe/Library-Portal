@@ -67,7 +67,7 @@ exports.postSignUpPage = (req, res, next) => {
                     return user.save();
                 }
             ).then(results => {
-                res.redirect("/client/userlogin");
+                res.redirect("/client/login");
             });
         }
     );
@@ -150,23 +150,6 @@ exports.getUserHomePage = async (req, res, next) => {
             });
     }
     catch {
-        err => {
-            console.log(err);
-        };
-    }
-};
-
-exports.getUserProfile = async (req, res, next) => {
-    const userId = req.params.id;
-    try {
-        const user = await User.findById(userId);
-        res.render('../views/client/clientProfile.ejs', {
-            pageTitle: " User profile ",
-            user,
-            routeFor: "client"
-        });
-
-    } catch {
         err => {
             console.log(err);
         };
@@ -256,10 +239,10 @@ exports.getReturnBookBarcode = async (req, res, next) => {
         const book = await Book.find({ isbn: isbn });
         res.render('../views/client/clientBarcode.ejs', {
             pageTitle: "Barcode",
-            headerTitle: book[0].title,
+            headerTitle: book[ 0 ].title,
             barcodeURL,
             routeFor: "client",
-            info: `Use this barcode to return your ${book[0].title} book`
+            info: `Use this barcode to return your ${book[ 0 ].title} book`
         });
     } catch(err) {
         console.log(err);

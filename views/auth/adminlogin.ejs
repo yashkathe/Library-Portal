@@ -19,7 +19,7 @@
                     <%= errorMessage %>
                 </div>
                 <% } %>
-                    <form action="/client/login" method="post">
+                    <form action="/admin/login" method="post">
                         <div class="form__div">
                             <label for="email-Id"><b>Email-Id / PID</b></label>
                             <input type="text" name="uname" value="<% if (errorMessage) { %><%= uname %><% } %>" required />
@@ -32,9 +32,6 @@
                             <button type="submit" class="submit__btn">Login</button>
                         </div>
                     </form>
-                    <div class="link__div">
-                        Don't have an account ? <a href="/client/signup">Sign-up</a>
-                    </div>
         </section>
 </body>
 

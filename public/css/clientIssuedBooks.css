@@ -1,5 +1,5 @@
 body {
-    background-color: #121212 !important;
+    background-color: #1f1b24 !important;
 }
 
 .main-issued {
@@ -38,7 +38,7 @@ body {
     box-shadow: 0 0px 8px #BB86FC;
     padding: 0vh 3vw 0vh 3vw;
     border-radius: 10px;
-    background: #1f1b24;
+    background: #121212;
 }
 
 .info {
@@ -47,6 +47,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 .info_childone {

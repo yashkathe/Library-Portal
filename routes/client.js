@@ -4,19 +4,17 @@ const router = express.Router()
 const controller = require('../controllers/client')
 
 // client/usersignup
-router.get("/usersignup", controller.getSignUpPage)
+router.get("/signup", controller.getSignUpPage)
 
 // client/userlogin
-router.get("/userlogin", controller.getLoginPage)
+router.get("/login", controller.getLoginPage)
 
 // client/home
 router.get("/home", controller.getUserHomePage)
 
-router.get("/home/profile/:id", controller.getUserProfile)
+router.get("/barcode/:id", controller.getUserBarcode)
 
-router.get("/home/barcode/:id", controller.getUserBarcode)
-
-router.get("/home/issuedBooks/:id", controller.getIssuedBooksById)
+router.get("/issuedBooks/:id", controller.getIssuedBooksById)
 
 router.get("/searchBooks", controller.getSearchBooksPage)
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/clientIssuedBooks.css" />
     <link rel="stylesheet" href="/includes/header.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Document</title>
+    <title><%= pageTitle %></title>
 </head>
 
 <body>
@@ -18,7 +18,6 @@
             <% if (books.length> 0) { %>
                 <div class="grid">
                     <% for (let book of books) { %>
-                        <% console.log(book) %>
                         <section class="issued-book__section">
                             <div class="title">
                                 <h3>

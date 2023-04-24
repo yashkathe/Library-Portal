@@ -1,5 +1,7 @@
 <header>
-    <div class="logo"><%= headerTitle || "Library Portal"%>  </div>
+    <div class="logo">
+        <%= headerTitle || "Library Portal" %>
+    </div>
     <div class="options">
         <nav>
             <ul>
@@ -8,23 +10,40 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/client/userlogin">Student Sign-in</a>
+                        <a href="/client/login">Student Sign-in</a>
                     </li>
                     <li>
-                        <a href="/client/usersignup">Student Sign-up<Sign-Up></Sign-Up></a>
+                        <a href="/client/signup">Student Sign-up<Sign-Up></Sign-Up></a>
                     </li>
-                <% } %>
+                    <% } %>
 
-                <% if (routeFor==="client" ) { %>
-                    <li>
-                        <a href="/client/home">Home Page</a>
-                    </li>
-                    <li>
-                        <form method="post" action="/client/logout" class="logout_form">
-                            <button type="submit" class="logout__btn"> Log out </button>
-                        </form>
-                    </li>
-                <% }%>
+                        <% if (routeFor==="client" ) { %>
+                            <li>
+                                <a href="/client/home">Home Page</a>
+                            </li>
+                            <li>
+                                <form method="post" action="/client/logout" class="logout_form">
+                                    <button type="submit" class="logout__btn"> Log out </button>
+                                </form>
+                            </li>
+                            <% }%>
+
+                                <% if (routeFor==="admin" ) { %>
+                                    <li>
+                                        <a href="/admin/home">Home Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/search-users">Search Users</a>
+                                    </li>
+                                    <li>
+                                        <a href="/admin/search-books">Search Books</a>
+                                    </li>
+                                    <li>
+                                        <form method="post" action="/admin/logout" class="logout_form">
+                                            <button type="submit" class="logout__btn"> Log out </button>
+                                        </form>
+                                    </li>
+                                    <% }%>
             </ul>
         </nav>
     </div>

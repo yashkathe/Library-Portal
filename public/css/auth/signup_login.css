@@ -13,6 +13,10 @@ body {
     margin-left: 5vw;
     margin-right: 5vw;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 form>div {
@@ -32,7 +36,7 @@ form>div {
 .form__div input {
     border-radius: 40px;
     height: 2rem;
-    width: 80%;
+    width: 100%;
     text-align: center;
 }
 

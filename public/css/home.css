@@ -1,11 +1,11 @@
 body {
-    background: #121212;
+    background: #1f1b24;
 }
 
 /* section  */
 
 .user__links {
-    background: #1f1b24;
+    background: #121212;
     box-shadow: 0 0px 6px #BB86FC;
     margin-top: 15vh;
     box-sizing: border-box;

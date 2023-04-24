@@ -78,7 +78,7 @@ button, input[type="submit"], input[type="reset"] {
     text-decoration: none;
     display: block;
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #a5a5a5;
 }
 
 .menu-toggle {
@@ -108,7 +108,7 @@ button, input[type="submit"], input[type="reset"] {
         position: absolute;
         width: 100%;
         height: calc(100vh - 50px);
-        background: #333;
+        background: #1f1b24;
         top: 50px;
         left: -100%;
         transition: 0.5s;
@@ -124,6 +124,6 @@ button, input[type="submit"], input[type="reset"] {
     }
 
     header nav ul li a {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 0.1px solid #a5a5a5;
     }
 }
