@@ -48,6 +48,7 @@ body {
     justify-content: center;
     margin-top: 1vh;
     margin-bottom: 1vh;
+    width: 100%;
 }
 
 .info_childone {
@@ -68,6 +69,7 @@ body {
 .info_childone div p {
     font-size: 0.8rem;
     color: #bdbbbb;
+    font-size: 1.6vh;
 }
 
 .child_childinfo {
@@ -84,13 +86,13 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-right: 0.4rem;
-    font-size: 2vh;
 }
 
 .child_childinfo div h6 {
     margin: 0;
     color: #c69df8;
     margin-right: 1vw;
+    font-size: 1.5vh;
 }
 
 .error__section {
@@ -156,8 +158,9 @@ input[type="submit"] {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: #1f1b24;
+    background: #121212;
     border-radius: 10px;
+    box-shadow: 0 0 5px #BB86FC;
 }
 
 input[name="search"] {
@@ -184,4 +187,62 @@ input[value="Search"]{
 .pagination > a {
     color: #c4c4c4;
     font-style:none;
+    padding: 1.2vw;
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+.users{
+    background: #1f1b24;
+    width: 100%;
+    margin-bottom: 1vh;
+    padding-bottom: 1vh;
+    border-radius: 10px;
+}
+
+.users div p {
+    text-align: center;
+    font-size: 1.5vh;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 1vh;
+    color: #BB86FC;
+    font-weight: bold;
+}
+
+.users_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    color: #bdbbbb;
+}
+
+.child_childinfo-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.child_childinfo-user div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 0.4rem;
+    font-size: 2vh;
+}
+
+.child_childinfo-user div h6 {
+    margin: 0;
+    color: #c69df8;
+    margin-right: 1vw;
+    font-size: 1.6vh;
+}
+
+.users_list div ul {
+    padding-left: 0;
+    color:#c4c4c4
 }

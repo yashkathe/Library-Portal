@@ -19,7 +19,8 @@ const userSchema = new mongoose.Schema({
     },
     booksIssued: [
         {
-            type: "String"
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book"
         }
     ]
 });

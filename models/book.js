@@ -23,11 +23,12 @@ const bookSchema = new mongoose.Schema({
         type: "Number"
     },
     isbn: {
-        type: "String"
+        type: "Number"
     },
-    issuedBy: [ {
-        type: "String"
-    }
-    ]
+    issuedBy: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        } ]
 });
 module.exports = mongoose.model('Book', bookSchema);

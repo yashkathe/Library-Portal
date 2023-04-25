@@ -7,6 +7,8 @@ router.get("/", controller.getLoginPage)
 
 router.get("/home", controller.getHomePage)
 
+router.get("/search-books", controller.getSearchBooks)
+
 router.get("/search-users", controller.getSearchUsers)
 
 router.post("/login", controller.postLogin)

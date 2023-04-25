@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 
 const User = require("../models/user");
 const Book = require("../models/book");
@@ -109,6 +109,102 @@ exports.postLogout = (req, res, next) => {
     });
 };
 
-exports.getSearchUsers = (req,res,next) => {
-    
-}
+exports.getSearchBooks = async (req, res, next) => {
+    try {
+
+        let search = "";
+        if(req.query.search) {
+            search = req.query.search;
+        }
+
+        let page = 1;
+        if(req.query.page) {
+            page = req.query.page;
+        }
+
+        const limit = 4;
+
+        const books = await Book.find({
+            $or: [
+                { title: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { description: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        })
+            .populate({ path: "issuedBy" })
+            .limit(limit * 1)
+            .skip(((page - 1) * limit))
+            .exec();
+
+        const count = await Book.find({
+            $or: [
+                { title: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { description: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        }).countDocuments();
+
+        res.render('../views/admin/searchBooks.ejs', {
+            pageTitle: "Search Books",
+            headerTitle: "Search Books",
+            routeFor: "admin",
+            books,
+            search,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+        }
+        );
+
+    } catch(err) {
+        console.log(err);
+    }
+};
+
+exports.getSearchUsers = async (req, res, next) => {
+    try {
+
+        let search = "";
+        if(req.query.search) {
+            search = req.query.search;
+        }
+
+        let page = 1;
+        if(req.query.page) {
+            page = req.query.page;
+        }
+
+        const limit = 4;
+
+        const users = await User.find({
+            $or: [
+                { email: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { pid: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        })
+            .populate({ path: "booksIssued" })
+            .limit(limit * 1)
+            .skip(((page - 1) * limit))
+            .exec();
+
+        const count = await User.find({
+            $or: [
+                { email: { $regex: '.*' + search + '.*', $options: 'i' } },
+                { pid: { $regex: '.*' + search + '.*', $options: 'i' } }
+            ]
+        }).countDocuments();
+
+        res.render('../views/admin/searchUsers.ejs', {
+            pageTitle: "Search Users",
+            headerTitle: "Search Users",
+            routeFor: "admin",
+            users,
+            search,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+        }
+        );
+
+    } catch(err) {
+        console.log(err);
+    }
+};
