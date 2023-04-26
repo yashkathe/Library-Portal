@@ -19,7 +19,9 @@
     "helmet": "^6.1.5",
     "mongoose": "^6.4.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.19",
     "qrcode": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

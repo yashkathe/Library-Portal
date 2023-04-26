@@ -202,7 +202,7 @@ input[value="Search"]{
 
 .users div p {
     text-align: center;
-    font-size: 1.5vh;
+    font-size: 1.6vh;
     border-bottom: 1px solid #c4c4c4;
     padding-bottom: 1vh;
     color: #BB86FC;
@@ -216,23 +216,32 @@ input[value="Search"]{
     justify-content: space-evenly;
     flex-wrap: wrap;
     color: #bdbbbb;
+    font-size: 1.6vh;
 }
 
 .child_childinfo-user {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
 }
 
-.child_childinfo-user div {
+.child_childinfo-user > div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding-right: 0.4rem;
-    font-size: 2vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.child_childinfo-user > div  > h6 {
+    font-size: 1.8vh;
+}
+
+.child_childinfo-user > div  > p {
+    color: #c4c4c4;
+    font-size: 1.8vh
 }
 
 .child_childinfo-user div h6 {

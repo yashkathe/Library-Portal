@@ -96,6 +96,7 @@ exports.getHomePage = async (req, res, next) => {
     catch {
         err => {
             console.log(err);
+            res.render("../views/errorPage.ejs", { error: err });
         };
     }
 };
@@ -104,6 +105,7 @@ exports.postLogout = (req, res, next) => {
     req.session.destroy(err => {
         if(err) {
             console.log(err);
+            res.render("../views/errorPage.ejs", { error: err });
         }
         res.redirect("/admin/");
     });
@@ -157,6 +159,7 @@ exports.getSearchBooks = async (req, res, next) => {
 
     } catch(err) {
         console.log(err);
+        res.render("../views/errorPage.ejs", { error: err });
     }
 };
 
@@ -206,5 +209,6 @@ exports.getSearchUsers = async (req, res, next) => {
 
     } catch(err) {
         console.log(err);
+        res.render("../views/errorPage.ejs", { error: err });
     }
 };

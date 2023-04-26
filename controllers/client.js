@@ -80,7 +80,7 @@ exports.postLoginPage = (req, res, next) => {
     User.findOne({ $or: [ { email: uname }, { pid: uname } ] }).then(
         user => {
             if(!user) {
-                return res.status(500).render("../views/auth/usersignup.ejs",
+                return res.status(500).render("../views/auth/userlogin.ejs",
                     {
                         pageTitle: "Create a new account",
                         headerTitle: "Sign Up",
@@ -99,6 +99,7 @@ exports.postLoginPage = (req, res, next) => {
                         return req.session.save(err => {
                             if(err) {
                                 console.log(err);
+                                res.render("../views/errorPage.ejs", { error: err });
                             }
                             res.redirect("/client/home");
                         });
@@ -132,6 +133,7 @@ exports.postLogout = (req, res, next) => {
     req.session.destroy(err => {
         if(err) {
             console.log(err);
+            res.render("../views/errorPage.ejs", { error: err });
         }
         res.redirect("/");
     });
@@ -152,6 +154,7 @@ exports.getUserHomePage = async (req, res, next) => {
     catch {
         err => {
             console.log(err);
+            res.render("../views/errorPage.ejs", { error: err });
         };
     }
 };
@@ -227,6 +230,7 @@ exports.getSearchBooksPage = async (req, res, next) => {
 
     } catch(err) {
         console.log(err);
+        res.render("../views/errorPage.ejs", { error: err });
     }
 };
 
@@ -246,5 +250,6 @@ exports.getReturnBookBarcode = async (req, res, next) => {
         });
     } catch(err) {
         console.log(err);
+        res.render("../views/errorPage.ejs", { error: err });
     }
 };
