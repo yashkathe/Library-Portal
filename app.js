@@ -1,9 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
+
+const helmet = require("helmet");
+const compression = require("compression");
+const morgan = require("morgan");
+const fs = require("fs");
+const path = require("path");
 
 const User = require('./models/user');
 URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.kinn93w.mongodb.net/LibraryDB?w=majority`;
@@ -29,7 +34,7 @@ app.use(express.static(path.join(__dirname, './public/assets')));
 //setting up routes
 const home = require('./routes/home');
 const clientRoutes = require('./routes/client');
-const adminRoutes = require('./routes/admin')
+const adminRoutes = require('./routes/admin');
 
 //setting up sessions
 app.use(session({
@@ -60,6 +65,14 @@ app.use((req, res, next) => {
 app.use(home);
 app.use("/client", clientRoutes);
 app.use("/admin", adminRoutes);
+
+const accessLogStram = fs.createWriteStream(path.join(
+    __dirname, 'access.log'),
+    { flags: 'a' });
+
+app.use(helmet());
+app.use(compression());
+app.use(morgan('combined', { stream: accessLogStram }));
 
 
 app.use((req, res, next) => {
