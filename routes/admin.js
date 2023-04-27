@@ -5,6 +5,8 @@ const controller = require("../controllers/admin")
 
 router.get("/", controller.getLoginPage)
 
+router.get("/barcode/:id", controller.getAdminBarcode)
+
 router.get("/home", controller.getHomePage)
 
 router.get("/search-books", controller.getSearchBooks)
