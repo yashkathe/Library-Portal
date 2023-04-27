@@ -64,12 +64,11 @@ input[type="reset"] {
     background-color: #BB86FC;
     border: 0.8px solid rgb(58, 58, 58);
     cursor: pointer;
-    width: 50%;
+    width: 65%;
     box-sizing: border-box;
-    padding: 0.8rem 1rem;
+    padding: 1rem 0.5rem;
     border-radius: 45px;
-    transition: 1s;
-    font-size: 0.8rem;
+    font-size: 1.5vh;
     margin-top: 2vh;
 }
 
@@ -103,5 +102,5 @@ input[type="reset"] {
 .user-message--error {
     border-color: rgb(231, 93, 93);
     background: rgb(255, 176, 176);
-    color:rgb(231, 93, 93);
+    color: rgb(231, 93, 93);
 }

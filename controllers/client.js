@@ -176,7 +176,7 @@ exports.getIssuedBooksById = async (req, res, next) => {
     const books = await Book.find({ issuedBy: userID });
     res.render('../views/client/clientIssuedBooks.ejs', {
         pageTitle: "Issued Books",
-        headerTitle: "Issued Books",
+        headerTitle: "Return Books",
         routeFor: "client",
         books
     });
