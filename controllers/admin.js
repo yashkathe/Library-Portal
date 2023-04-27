@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const QRCode = require("qrcode");
 
 const User = require("../models/user");
 const Book = require("../models/book");
@@ -109,6 +110,23 @@ exports.postLogout = (req, res, next) => {
         }
         res.redirect("/admin/");
     });
+};
+
+exports.getAdminBarcode = async (req, res, next) => {
+    try{
+        const userID = req.params.id;
+        const barcodeURL = await QRCode.toDataURL(userID);
+        res.render('../views/client/clientBarcode.ejs', {
+            pageTitle: "Barcode",
+            headerTitle: "Login Barcode",
+            barcodeURL,
+            routeFor: "admin",
+            info: "Use this barcode to add new books to library"
+        });    
+    }catch(err){
+        console.log(err)
+        res.render("../views/errorPage.ejs", { error: err });
+    }
 };
 
 exports.getSearchBooks = async (req, res, next) => {
