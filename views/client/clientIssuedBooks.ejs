@@ -45,6 +45,14 @@
                                             </p>
                                         </div>
                                     </div>
+                                    <div class="child_childinfo textAlign">
+                                        <div>
+                                            <% for (let user of book.issuedBy ) { %>
+                                                <h6>Issued on: </h6>
+                                                <p><%= user.time %></p>
+                                            <% } %>
+                                            </div>
+                                    </div>
                                 </div>
                                 <div class="info_childtwo">
                                     <img src="<%= book.image %>" alt="<%= book.title %>" />

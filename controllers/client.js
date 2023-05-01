@@ -167,13 +167,13 @@ exports.getUserBarcode = async (req, res, next) => {
         headerTitle: "Login Barcode",
         barcodeURL,
         routeFor: "client",
-        info: "Use this barcode when you want to issue a book"
+        info: "Use this QRcode when you want to issue a book"
     });
 };
 
 exports.getIssuedBooksById = async (req, res, next) => {
     const userID = req.params.id;
-    const books = await Book.find({ issuedBy: userID });
+    const books = await Book.find({ issuedBy: {$elemMatch: {user: userID}} }).populate({ path: "issuedBy.user" });
     res.render('../views/client/clientIssuedBooks.ejs', {
         pageTitle: "Issued Books",
         headerTitle: "Return Books",
@@ -246,7 +246,7 @@ exports.getReturnBookBarcode = async (req, res, next) => {
             headerTitle: book[ 0 ].title,
             barcodeURL,
             routeFor: "client",
-            info: `Use this barcode to return your ${book[ 0 ].title} book`
+            info: `Use this QRcode to return your ${book[ 0 ].title} book`
         });
     } catch(err) {
         console.log(err);

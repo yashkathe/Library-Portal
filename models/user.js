@@ -19,8 +19,8 @@ const userSchema = new mongoose.Schema({
     },
     booksIssued: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Book"
+            book:{type: mongoose.Schema.Types.ObjectId,ref: "Book"},
+            time: {type:"String",required: true}
         }
     ]
 });

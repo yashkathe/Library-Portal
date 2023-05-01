@@ -151,7 +151,7 @@ exports.getSearchBooks = async (req, res, next) => {
                 { authors: { $regex: '.*' + search + '.*', $options: 'i' } }
             ]
         })
-            .populate({ path: "issuedBy" })
+            .populate({ path: "issuedBy.user" })
             .limit(limit * 1)
             .skip(((page - 1) * limit))
             .exec();
@@ -202,7 +202,7 @@ exports.getSearchUsers = async (req, res, next) => {
                 { pid: { $regex: '.*' + search + '.*', $options: 'i' } }
             ]
         })
-            .populate({ path: "booksIssued" })
+            .populate({ path: "booksIssued.book" })
             .limit(limit * 1)
             .skip(((page - 1) * limit))
             .exec();

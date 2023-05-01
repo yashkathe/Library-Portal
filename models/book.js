@@ -26,9 +26,9 @@ const bookSchema = new mongoose.Schema({
         type: "Number"
     },
     issuedBy: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+        {   
+            user:{type: mongoose.Schema.Types.ObjectId,ref: "User"},
+            time: {type:"String",required: true}
         } ]
 });
 module.exports = mongoose.model('Book', bookSchema);

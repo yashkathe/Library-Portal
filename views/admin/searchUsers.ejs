@@ -27,20 +27,20 @@
                     <% for (let user of users) { %>
                         <section class="issued-book__section">
                             <div class="info">
-                                    <div class="child_childinfo-user">
-                                        <div>
-                                            <h6>Email:</h6>
-                                            <p>
-                                                <%= user.email%>
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <h6>PID:</h6>
-                                            <p>
-                                                <%= user.pid %>
-                                            </p>
-                                        </div>
+                                <div class="child_childinfo-user">
+                                    <div>
+                                        <h6>Email:</h6>
+                                        <p>
+                                            <%= user.email%>
+                                        </p>
                                     </div>
+                                    <div>
+                                        <h6>PID:</h6>
+                                        <p>
+                                            <%= user.pid %>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="users">
                                 <div>
@@ -54,7 +54,7 @@
                                                 <ul>
                                                     <% for (let book of user.booksIssued ) { %>
                                                         <li>
-                                                            <%= book.title %>
+                                                            <%= book.book.title %> - <%= book.time %>
                                                         </li>
                                                         <% } %>
                                                 </ul>
@@ -70,7 +70,7 @@
                             <a href="?search=<%=search%>&page=<%=i%>">
                                 <%=i %>
                             </a>
-                            <br/>
+                            <br />
                             <% }%>
                     </div>
                     </div>
