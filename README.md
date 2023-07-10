@@ -14,27 +14,27 @@ Library Automation System is a technique of maintaining and surveying books at t
 
 The student can issue the book from the library system and for that purpose, the login QR code must be scanned. After scanning the QR code the student gets logged in to the Library system portal. Figure 3.11 represents the QR code for the user. This QR code is unique to each individual student and works as an identification card or library card. Users require a QR code to log into the library system, which is created by encoding the ObjectId. The ’npm QR code’ library creates the QR code.
 
-<p align="center">
-    <img src="./assets/qr_code_issue.jpg" alt="drawing" width="300" />
+<p align="center" width="300">
+    <img src="./assets/qr_code_issue.jpg" width="300" />
 </p>
 
 If the user has to return the books issued, he/she has to click return a book and then it gets directed to a page where all the books that are issued are displayed. The user has to select the book which he/she wants to return and click on Barcode for returning.
 
 <p align="center">
-    <img src="./assets/return_book.jpg" alt="drawing" width="300" />
+    <img src="./assets/return_book.jpg" width="300" />
 </p>
 
 The book return QR code is shown below. Here the QR code value and the
 book ISBN should match for successfully returning the book
 
 <p align="center">
-    <img src="./assets/qr_code_return.jpg" alt="drawing" width="300" />
+    <img src="./assets/qr_code_return.jpg" width="300" />
 </p>
 
 The user can also search for various books that are available in the library. The student just has to type in the book name and hit enter.
 
 <p align="center">
-    <img src="./assets/search_book.jpg" alt="drawing" width="300" />
+    <img src="./assets/search_book.jpg" width="300" />
 </p>
 
 # UI - Admin side
@@ -42,14 +42,14 @@ The user can also search for various books that are available in the library. Th
 The Admin can search for various books by entering the book name. After that, the book data is displayed with the student’s name who has issued that book.
 
 <p align="center">
-    <img src="./assets/search_books_new.jpg" alt="drawing" width="300" />
+    <img src="./assets/search_books_new.jpg" width="300" />
 </p>
 
 The Admin can also search various users by searching the user’s name. 
 The Admin gets the student details and list of books issued by the user
 
 <p align="center">
-    <img src="./assets/search_users_new.jpg" alt="drawing" width="300" />
+    <img src="./assets/search_users_new.jpg" width="300" />
 </p>
 
 # Database - MongoDB
@@ -57,13 +57,13 @@ The Admin gets the student details and list of books issued by the user
 ### Student Schema
 
 <p align="center">
-    <img src="./assets/student_db.png" alt="drawing" width="500" />
+    <img src="./assets/student_db.png" width="500" />
 </p>
 
 ### Book Schema
 
 <p align="center">
-    <img src="./assets/book_db.png" alt="drawing" width="500" />
+    <img src="./assets/book_db.png" width="500" />
 </p>
 
 # Extra 
